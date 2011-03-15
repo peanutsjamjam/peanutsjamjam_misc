@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# force commit msg encoding utf8 or ascii
+#
+# install:
+# cp commit-msg_force_utf8_msg .git/hooks/commit-msg
+# chmod +x .git/hooks/commit-msg
+
+enc=`nkf -g $1`
+
+if [ $enc = "UTF-8" -o $enc = "ASCII" ]
+then
+	echo "encoding is $enc. OK"
+	exit 0
+fi
+
+if [ $enc = "EUC-JP" ]
+then
+	echo "encoding is $enc. converting"
+	temp=`basename $0`
+	TEMPFILE=`mktemp /tmp/${temp}.XXXXX`
+	nkf -w $1 > ${TEMPFILE}
+	cat ${TEMPFILE} > $1
+	rm ${TEMPFILE}
+	exit 0
+fi
+
+echo "encoding is $enc. Aborting"
+exit 1
