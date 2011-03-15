@@ -1,0 +1,12 @@
+
+startup_message off
+#caption always "%?%F%{= wk}%:%{= ww}%?%-w%{=u Wk}%n %t%{-}%+w"
+#caption always "%-Lw%{= BW}%50>%n%f* %t%{-}%+Lw%<"
+caption always "%-Lw%{= bW}%50>%n%f* %t%{-}%+Lw%<"
+defscrollback 7000
+vbell off
+
+# switch window F10 and F11
+bindkey -k k; prev
+bindkey -k F1 next
+
