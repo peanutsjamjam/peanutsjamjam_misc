@@ -11,7 +11,6 @@ set browsedir=buffer
 set tags+=tags;
 set mouse=a
 set ttymouse=xterm2
-"set encoding=euc-jp
 set encoding=utf8
 set fileencodings=ucs-bom,utf-8,iso-2022-jp,euc-jp,sjis
 set ambiwidth=double
@@ -57,7 +56,8 @@ func! s:JamSetColor()
     syn match podTrailWhite "\s\+$"
     syn region podOriginal start=/^=begin original/ end=/^=end original/ contains=podTrailWhite
     hi link podTrailWhite Error
-    hi link podOriginal Comment
+    "hi link podOriginal Ignore
+    hi podOriginal ctermfg=2
     hi LineNr ctermfg=red
     hi PreProc ctermfg=darkgreen
     ab bo =begin original
@@ -75,3 +75,6 @@ endfunc
 set noequalalways
 nmap <F8> <C-W>+
 nmap <F9> <C-W>-
+nmap <C-N> :bnext<CR>
+nmap <C-P> :bprevious<CR>
+
