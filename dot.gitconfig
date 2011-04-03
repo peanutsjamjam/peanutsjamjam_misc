@@ -1,0 +1,10 @@
+[user]
+	name = Atsushi SUGAWARA
+	email = peanutsjamjam@gmail.com
+[color]
+	ui = true
+[log]
+	decorate = full
+
+[diff]
+	mnemonicprefix = true
