@@ -36,7 +36,7 @@ function s:Enable()
   exe "nmap h <C-W><"
   exe "nmap l <C-W>>"
 
-  echo "Resize mode on. Press <C-W><C-E> to quit."
+  echo "Resize mode on. Press <C-W><C-E> again to quit."
 endfunction
 
 function s:Disable()
