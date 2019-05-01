@@ -5,7 +5,7 @@ set modeline
 set tabstop=4 shiftwidth=4 softtabstop=0
 set nobackup
 set noesckeys
-set dictionary=/usr/share/dict/words
+"set dictionary=/usr/share/dict/words
 set browsedir=buffer
 
 set tags+=tags;
@@ -28,6 +28,10 @@ hi MatchParen cterm=underline ctermbg=darkgray ctermfg=red
 
 au FileType * call s:JamSetColor()
 func! s:JamSetColor()
+
+  if &filetype == "cpp"
+    inoremap cpp #include <cstdio>int main(int argc, char **argv) {return 0;}
+  endif
 
   if &filetype == "perl"
     exe 'colorscheme desert'
