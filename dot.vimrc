@@ -7,6 +7,7 @@ set nobackup
 set noesckeys
 "set dictionary=/usr/share/dict/words
 set browsedir=buffer
+set nofileignorecase
 
 set tags+=tags;
 set mouse=a
