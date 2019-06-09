@@ -16,7 +16,7 @@ set encoding=utf8
 set fileencodings=ucs-bom,utf-8,iso-2022-jp,euc-jp,sjis
 set ambiwidth=double
 set laststatus=2
-set statusline=%<%f\ %([%{&fenc}]%)%h%m%r%=%l,%c%V\ %P
+set statusline=%<%f\ %([%{&fenc}]%)%y%h%m%r%=%l,%c%V\ %P
 
 colorscheme desert
 syntax enable
@@ -29,10 +29,6 @@ hi MatchParen cterm=underline ctermbg=darkgray ctermfg=red
 
 au FileType * call s:JamSetColor()
 func! s:JamSetColor()
-
-  if &filetype == "cpp"
-    inoremap cpp #include <cstdio>int main(int argc, char **argv) {return 0;}
-  endif
 
   if &filetype == "perl"
     exe 'colorscheme desert'
@@ -83,4 +79,5 @@ nmap <F9> <C-W>-
 nmap <C-N> :bnext<CR>
 nmap <C-P> :bprevious<CR>
 vmap / y/<C-R>"
+inoremap <silent> jj <ESC>
 
