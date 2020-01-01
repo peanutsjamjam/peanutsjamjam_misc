@@ -1,5 +1,5 @@
 
-set helplang=ja
+set helplang=ja,en
 set autoindent smartindent
 set modeline
 set tabstop=4 shiftwidth=4 softtabstop=0
@@ -8,6 +8,7 @@ set noesckeys
 "set dictionary=/usr/share/dict/words
 set browsedir=buffer
 set nofileignorecase
+set number
 
 set tags+=tags;
 set mouse=a
@@ -63,7 +64,6 @@ func! s:JamSetColor()
     hi PreProc ctermfg=darkgreen
     ab bo =begin original
     ab eo =end original
-    set number
   endif
 
   if &filetype == "vim"
