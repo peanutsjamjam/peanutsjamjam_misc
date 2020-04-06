@@ -10,6 +10,7 @@ set browsedir=buffer
 set nofileignorecase
 set number
 
+set hlsearch
 set tags+=tags;
 set mouse=a
 set ttymouse=xterm2
@@ -80,4 +81,5 @@ nmap <C-N> :bnext<CR>
 nmap <C-P> :bprevious<CR>
 vmap / y/<C-R>"
 inoremap <silent> jj <ESC>
+nnoremap <silent> <C-@> :nohlsearch<CR>
 
