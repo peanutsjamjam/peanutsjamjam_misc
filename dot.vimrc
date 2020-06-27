@@ -80,6 +80,6 @@ nmap <F9> <C-W>-
 nmap <C-N> :bnext<CR>
 nmap <C-P> :bprevious<CR>
 vmap / y/<C-R>"
-inoremap <silent> jj <ESC>
+"inoremap <silent> jj <ESC>
 nnoremap <silent> <C-@> :nohlsearch<CR>
 
