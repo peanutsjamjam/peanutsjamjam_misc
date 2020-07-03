@@ -26,7 +26,6 @@ set complete+=k
 filetype indent on
 filetype plugin on
 
-
 hi MatchParen cterm=underline ctermbg=darkgray ctermfg=red
 
 au FileType * call s:JamSetColor()
