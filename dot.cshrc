@@ -3,9 +3,13 @@ alias ls ls -FG
 alias la ls -a
 alias j  jobs
 alias h  history
+alias vi /usr/local/bin/vim
+alias view /usr/local/bin/vim -R
 
 setenv PAGER /usr/local/bin/lv
-setenv EDITOR vim
+setenv EDITOR /usr/local/bin/vim
+setenv POSTGRES_HOME /usr/local/Cellar/postgresql@11/11.7_1
+setenv PGDATA /usr/local/var/postgresql@11
 
 if ($?prompt) then
 	# An interactive shell -- set some stuff up
@@ -14,8 +18,9 @@ if ($?prompt) then
 	set prompt="[%m] > "
 	set autolist
 	set filec
-	set history = 100
-	#set savehist = 100
+	set ignoreeof
+	set history = 1000
+	set savehist = 1000
 	#set mail = (/var/mail/$USER)
 	#setenv  crt     24
 endif
