@@ -4,7 +4,7 @@ alias j  jobs -l
 alias la ls -aF
 alias lf		ls -FA
 alias ll		ls -lAF
-alias ls ls -F
+alias ls		ls -F
 alias lv		lv -Au8
 alias vi		/usr/local/bin/vim
 alias view		/usr/local/bin/vim -R
