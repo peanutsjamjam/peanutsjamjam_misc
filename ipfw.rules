@@ -1,0 +1,35 @@
+#!/bin/sh
+
+fw_cmd="/sbin/ipfw"
+fw_add="${fw_cmd} add"
+my_net="153.127.63.251/23"
+
+# flush old rules
+${fw_cmd} -q -f flush
+
+# rules on localhost
+${fw_add} 100 allow     all  from any to any via lo0
+${fw_add} 200 deny      all  from any to 127.0.0.0/8
+${fw_add} 300 deny      all  from 127.0.0.0/8 to any
+
+# accelerator
+${fw_add}     allow     tcp  from any to any established
+${fw_add}     allow     all  from any to any frag
+${fw_add}     check-state
+
+# allow
+${fw_add}     allow     tcp  from any to me 1220 setup # ssh
+${fw_add}     allow     tcp  from any to me   80 setup # http
+
+# outer network
+${fw_add}     allow     udp  from ${my_net} to any  53 keep-state
+${fw_add}     allow     udp  from ${my_net} to any 123 keep-state
+${fw_add}     allow     tcp  from ${my_net} to any setup
+
+# icmp from/to outer network
+${fw_add}     allow     icmp from any to any  in icmptypes 0,3,4,8,11,12
+${fw_add}     allow     icmp from any to any out icmptypes 3,4,8,11,12
+
+# default to deny (with log)
+${fw_add}     deny log  all  from any to any
+
