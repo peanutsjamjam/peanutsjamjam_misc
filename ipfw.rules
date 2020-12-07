@@ -1,6 +1,6 @@
 #!/bin/sh
 
-fw_cmd="/sbin/ipfw"
+fw_cmd="/sbin/ipfw -q"
 fw_add="${fw_cmd} add"
 my_net="153.127.63.251/23"
 
@@ -31,5 +31,7 @@ ${fw_add}     allow     icmp from any to any  in icmptypes 0,3,4,8,11,12
 ${fw_add}     allow     icmp from any to any out icmptypes 3,4,8,11,12
 
 # default to deny (with log)
+${fw_add}     deny      udp  from any to any
+${fw_add}     deny log  tcp  from any to any
 ${fw_add}     deny log  all  from any to any
 
