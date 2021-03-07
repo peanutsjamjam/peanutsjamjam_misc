@@ -12,8 +12,8 @@ set number
 
 set hlsearch
 set tags+=tags;
-set mouse=a
-set ttymouse=xterm2
+"set mouse=a
+"set ttymouse=xterm2
 set encoding=utf8
 set fileencodings=ucs-bom,utf-8,iso-2022-jp,euc-jp,sjis
 set ambiwidth=double
