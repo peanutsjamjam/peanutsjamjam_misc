@@ -22,8 +22,8 @@ ${fw_add}     allow     tcp  from any to me 1220 setup # ssh
 ${fw_add}     allow     tcp  from any to me   80 setup # http
 
 # outer network
-${fw_add}     allow     udp  from ${my_net} to any  53 keep-state
-${fw_add}     allow     udp  from ${my_net} to any 123 keep-state
+${fw_add}     allow     udp  from ${my_net} to any  53 keep-state # dns
+${fw_add}     allow     udp  from ${my_net} to any 123 keep-state # ntp
 ${fw_add}     allow     tcp  from ${my_net} to any setup
 
 # icmp from/to outer network
