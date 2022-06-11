@@ -9,6 +9,9 @@ set noesckeys
 set browsedir=buffer
 set nofileignorecase
 set number
+set noincsearch
+
+"set runtimepath+=/usr/home/sugawara/repos/vimdoc-ja
 
 set hlsearch
 set tags+=tags;
@@ -16,6 +19,7 @@ set mouse=a
 set ttymouse=xterm2
 set encoding=utf8
 set fileencodings=ucs-bom,utf-8,iso-2022-jp,euc-jp,sjis
+"set fileencodings=ucs-bom,utf-8,iso-8859-1,euc-jp,sjis,utf-16le
 set ambiwidth=double
 set laststatus=2
 set statusline=%<%f\ %([%{&fenc}]%)%y%h%m%r%=%l,%c%V\ %P
@@ -25,6 +29,7 @@ syntax enable
 set complete+=k
 filetype indent on
 filetype plugin on
+
 
 hi MatchParen cterm=underline ctermbg=darkgray ctermfg=red
 
