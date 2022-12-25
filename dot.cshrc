@@ -6,7 +6,7 @@ alias lf		ls -FA
 alias ll		ls -lAF
 alias ls		ls -F
 alias lv		lv -Au8
-alias vi		/usr/local/bin/vim
+alias vi		vim
 alias view		/usr/local/bin/vim -R
 alias screen	/usr/local/bin/screen -U
 alias o			objdump -d --disassembler-options=intel
