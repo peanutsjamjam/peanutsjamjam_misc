@@ -20,8 +20,9 @@ var pc_col = 37
 def PlaceComment()
 
   exe "normal A \<Esc>"
-  var pos = getcursorcharpos()[4]
-  var pos_ = pos
+  var p = getcursorcharpos()
+  echo p
+  var pos = p[4]
   exe "normal x"
 
   if pos >= pc_col
@@ -36,7 +37,7 @@ def PlaceComment()
     exe "normal x"
   endwhile
 
-  exe $"normal A{pc_str}{pos_}\<Esc>"
+  exe $"normal A{pc_str}\<Esc>"
  
 enddef
 
